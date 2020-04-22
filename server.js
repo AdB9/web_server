@@ -1,6 +1,6 @@
 var express = require('express');
 var app = express();
-var port = 3005;
+var PORT = 3005;
 var middleware = {
     requireAuthentication: function(req, res, next){
         console.log('private route hit!');
@@ -20,6 +20,6 @@ app.get('/about',middleware.requireAuthentication,function(req,res){
 });
 
 app.use(express.static(__dirname + '/public'));
-app.listen(port, function(){
-    console.log('Express server started on port: '+ port);
+app.listen(PORT, function(){
+    console.log('Express server started on PORT: '+ PORT);
 });
